@@ -12,7 +12,7 @@ namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form
     {
-        const string Extension = "ay";
+        const string AttachedWord = "ay";
  
         public Form1()
         {
@@ -29,11 +29,11 @@ namespace WindowsFormsApplication2
             string translation = "";
             string input = textBox1.Text;
 
-            string[] tempInput = input.Split(' ');
+            string[] arrInput = input.Split(' ');
 
-            for (int i = 0; i < tempInput.Length; i++)
+            for (int i = 0; i < arrInput.Length; i++)
             {
-                translation += getPigLatin(tempInput[i]);
+                translation += getPigLatin(arrInput[i]);
             }
 
             textBox2.Text = translation;
@@ -41,12 +41,12 @@ namespace WindowsFormsApplication2
 
         private string getPigLatin(string input)
         {
-            string word;
+            string Insertedword;
             string firstLetter = input.Substring(0, 1);
 
-            word = input.Substring(1) + firstLetter + Extension + " ";
+            Insertedword = input.Substring(1) + firstLetter + AttachedWord + " ";
 
-            return word;
+            return Insertedword;
         }
     }
 }
